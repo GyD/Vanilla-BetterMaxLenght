@@ -28,10 +28,27 @@ $PluginInfo['DiscussionMaxLength'] = array(
  */
 class DiscussionMaxLength extends Gdn_Plugin
 {
+
+    /**
+     * @param $Sender
+     */
+    public function PostController_EditDiscussion_Before($Sender)
+    {
+        $this->setDiscussionLength();
+    }
+
     /**
      * @param $Sender
      */
     public function PostController_Discussion_Before($Sender)
+    {
+        $this->setDiscussionLength();
+    }
+
+    /**
+     *
+     */
+    private function SetDiscussionLength()
     {
         $MaxDiscussionLength = Gdn::Config('Vanilla.Discussion.MaxLength', 0);
         if (is_numeric($MaxDiscussionLength) && $MaxDiscussionLength > 0) {
