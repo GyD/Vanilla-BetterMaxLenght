@@ -26,7 +26,7 @@ $PluginInfo['DiscussionMaxLength'] = array(
 /**
  * Class DiscussionMaxLength
  */
-class DiscussionMaxLength extends Gdn_Plugin
+class DiscussionMaxLengthPlugin extends Gdn_Plugin
 {
 
     /**
